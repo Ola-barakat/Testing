@@ -46,6 +46,7 @@ public class HomePage {
     private final By phoneumber=By.name("contact");
     private final By cashOnDelievry=By.xpath("//label[text()='Cash on Delivery']");
     private final By confirm=By.xpath("//button[text()='Confirm']");
+    private final By returnedProductInCart= By.xpath("//a[@href='/product/undefined']");
 //Shipping addres elements
     private final By addressTab=By.xpath("//button[h3/span]");
     private final By countryField =By.xpath("//h4[contains(text(), 'Country :')]");
@@ -62,21 +63,20 @@ public class HomePage {
         for (WebElement item : items) {
             textList.add(item.getText());
         }
-
         return  textList;
     }
 
 
-    public List<String> getAllProductInCart() throws InterruptedException {
+    public List<String> getAllProductINCart() throws InterruptedException {
         Thread.sleep(1000);
-        List<WebElement> items = driver.findElements(allProductInCart);
+        List<WebElement> items = driver.findElements(returnedProductInCart);
         List<String> textList = new ArrayList<>();
         for (WebElement item : items) {
             textList.add(item.getText());
         }
-
         return  textList;
     }
+
 
     public void clickOnKeybardproduct() throws InterruptedException {
         Thread.sleep(1000);

@@ -80,14 +80,14 @@ public class HomeStepDef {
         home.clickOnAddToCart();
     }
 
-    @Then("Validate that product cart contain {string} element")
+    @And("Validate that product cart contain {string} element")
     public void validateThatProductCartContainElement(String cart_item_count) {
         int size = home.getItemsCount();
         String count = String.valueOf(size);
         Assert.assertEquals(count, cart_item_count);
     }
 
-    @And("Validate that product message")
+    @Then("Validate that product message")
     public void validateThatProductMessage() {
         home.getToastMessage();
     }
@@ -113,11 +113,8 @@ public class HomeStepDef {
     }
 
 
-    @And("Check Product {string}and {string}")
-    public void checkProductAnd(String title, String price) throws InterruptedException {
-//        Assert.assertEquals(home.getKeybardgetproductName(), title);
-//        Assert.assertEquals(home.getKeybardgetproductPrice(), price);
-    }
+   //     List<String> productName = home.getAllProductINCart();
+  //      Assert.assertEquals(productName.get(1),title_2);
 
 
     @And("Check total price {string}")
@@ -177,6 +174,14 @@ public class HomeStepDef {
         DriverManager.closeDriver(); // Quit the WebDriver
     }
 
+
+
+    @And("Check product  {string} and product {string}")
+    public void checkProductAndProduct(String title_1, String title_2) throws InterruptedException {
+        List<String> productName = home.getAllProductINCart();
+        Assert.assertEquals(productName.get(0),title_1);
+        Assert.assertTrue(productName.get(1).contains(title_2));
+    }
 }
 
 

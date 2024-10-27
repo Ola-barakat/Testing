@@ -35,7 +35,7 @@ public class RegstrationStepDef {
     public void fillAllMandatoryField() throws InterruptedException {
         Thread.sleep(2000);
         registerPage.setUsername("Testuser");
-        registerPage.setEmail("olabgparseepkpjjooalpt12@gmail.com");
+        registerPage.setEmail("olabgparseepkpmmllljjoppoalpt12@gmail.com");
         registerPage.setPassword("Test@1234");
         registerPage.setGender("female");
         registerPage.setAddress1("address1");

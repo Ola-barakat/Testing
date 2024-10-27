@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = {"src/main/java/tests"},
         glue = {"tests"},
-        plugin = {"html:reports/Report.html"},
+        plugin = {"html:reports/Web.html"},
         monochrome = true
 )
 

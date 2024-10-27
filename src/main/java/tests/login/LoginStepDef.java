@@ -31,7 +31,12 @@ public class LoginStepDef {
         login.setPassword("Test@1234");
         login.clickOnLoginButton();
     }
-
+    @When("User login with credentials{string} and {string}")
+    public void userLoginWithCredentialsAnd(String username, String userpassword) throws InterruptedException {
+        login.setUsername(username);
+        login.setPassword(userpassword);
+        login.clickOnLoginButton();
+    }
 
     @Then("Validate that account is open Successfully")
     public void validateThatAccountIsOpenSuccessfully() throws InterruptedException {
@@ -45,5 +50,7 @@ public class LoginStepDef {
     public void tearDown() {
         DriverManager.closeDriver(); // Quit the WebDriver
     }
+
+
 }
 
