@@ -59,6 +59,7 @@ Feature: home
     |  olabarakat200004@gmail.com | Test@1234 |      1   |
 
 
+
   Scenario Outline:Validate that two products which include (title and Price) added successfully to cart
     Given Click on login from menu
     When  User login with credentials"<username>" and "<userpassword>"

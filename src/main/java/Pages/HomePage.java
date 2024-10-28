@@ -3,11 +3,7 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import driver.DriverManager;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-
-import javax.print.DocFlavor;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -195,6 +191,9 @@ public class HomePage {
         Thread.sleep(10000);
      driver.findElement(addressTab).click();}
 
+   public WebElement country(){
+       return driver.findElement(countryField);
+   }
     public String getCountry() throws InterruptedException {
        return driver.findElement(countryField).getText();}
 

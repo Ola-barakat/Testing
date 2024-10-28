@@ -8,7 +8,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import java.util.List;
 
 public class HomeStepDef {
@@ -105,16 +104,10 @@ public class HomeStepDef {
     }
 
 
-
-
     @And("choose product name {string}")
     public void chooseProductName(String product_name) throws InterruptedException {
         home.selectLaptopProductName(product_name);
     }
-
-
-   //     List<String> productName = home.getAllProductINCart();
-  //      Assert.assertEquals(productName.get(1),title_2);
 
 
     @And("Check total price {string}")
@@ -159,6 +152,8 @@ public class HomeStepDef {
     @Then("validate that shipping address contains {string} and {string} and {string} and {string}")
     public void validateThatShippingAddressContainsAndAndAnd(String country, String State, String Address1, String Address2) throws InterruptedException {
         Thread.sleep(20000);
+        DriverManager action=new DriverManager();
+        action.scroll(home.country());
        Assert.assertTrue(home.getCountry().contains(country));
         Assert.assertTrue(home.getState().contains( State));
         Assert.assertTrue(home.getaddress1().contains(Address1));
